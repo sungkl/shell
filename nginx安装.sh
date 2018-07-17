@@ -15,7 +15,7 @@ pack=$nginx'.tar.gz'
 if [ -f $pack ];then
   id nginx &>/dev/null 
   if [ $? -ne 0 ];then 
-    useradd ‐s /sbin/nologin nginx 
+    useradd -s /sbin/nologin nginx 
   fi
   tar -xf $pack 
   cd $nginx
