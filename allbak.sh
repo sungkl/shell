@@ -35,11 +35,11 @@ do
             file="${dir}/${page}.txt"
             echo ${db}' - '${name}' - '$page' limit '$a','$page_c
             if [ ! -f $file ];then
-				        mysql -u${u} -p"${p}" -e "select * from ${db}.${name} limit ${a},${page_c} into outfile '${file}' fields terminated by ',' LINES TERMINATED BY '\n'" 2>> ${dir}/error.log
-				        sleep 1;
+		mysql -u${u} -p"${p}" -e "select * from ${db}.${name} limit ${a},${page_c} into outfile '${file}' fields terminated by ',' LINES TERMINATED BY '\n'" 2>> ${dir}/error.log
+		sleep 1;
             fi
             let page=page+1;
-		done
+	done
     fi
     let i++
 done
