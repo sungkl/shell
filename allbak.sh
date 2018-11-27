@@ -4,8 +4,10 @@ db=$1
 if [ -z $db ];then
 	echo '未选择数据库';exit
 fi
-u='mysqlbak'
-p='mysqlbak123..'
+read -p '数据库用户名：' u
+stty -echo
+read -p '数据库密码：' p
+stty echo
 tables=`mysql -u${u} -p"${p}" -e "use ${db};show tables;"`
 #echo $tables
 i=0
