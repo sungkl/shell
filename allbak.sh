@@ -1,4 +1,5 @@
 #!/bin/bash
+#需要的数据库权限，例：grant SELECT,FILE,LOCK TABLES on *.* to 'mysqlbak'@'localhost' identified by 'mysqlbak123..';
 #完全备份脚本
 db=$1
 if [ -z $db ];then
