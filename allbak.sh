@@ -24,9 +24,9 @@ do
         dir="/data/mysql_bak/${now_day}/${db}/${name}"
         mkdir -p $dir
         chown -R mysql:mysql $dir
-	      echo '导出表结构'${db}' - '${name}
-	      mysqldump -u${u} -p${p} -d ${db} ${name} > ${dir}/${db}_${name}.desc
-	      sed -i '/^\(\/\*!\|--\|$\)/d' ${dir}/${db}_${name}.desc
+	echo '导出表结构'${db}' - '${name}
+	mysqldump -u${u} -p${p} -d ${db} ${name} > ${dir}/${db}_${name}.desc
+	sed -i '/^\(\/\*!\|--\|$\)/d' ${dir}/${db}_${name}.desc
         while (($page<$paget))
         do
             a=$[$page*$page_c]
