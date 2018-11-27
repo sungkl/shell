@@ -22,7 +22,7 @@ do
                         for txt in `ls ${f}/*.txt 2> /dev/null`
                         do
                             echo $txt
-								            mysql -uroot -p'123456' -e "LOAD DATA INFILE  '${txt}' IGNORE INTO TABLE ${db}.${table} CHARACTER SET UTF8 FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';" 2>>/data/mysql_bak/error_import_${db}.log
+		 	    mysql -uroot -p'123456' -e "LOAD DATA INFILE  '${txt}' IGNORE INTO TABLE ${db}.${table} CHARACTER SET UTF8 FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';" 2>>/data/mysql_bak/error_import_${db}.log
                         done
                 fi
         fi
