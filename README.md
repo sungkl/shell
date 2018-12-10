@@ -1,1 +1,1 @@
-# shell 脚本
+# shell 和 Python 脚本
