@@ -5,8 +5,8 @@ import MySQLdb
 import math
 import time
 import os
-#import readline
-#import getpass
+import readline
+import getpass
 db = sys.argv[1]
 now_day=time.strftime("%Y-%m-%d", time.localtime())
 page_c=20000
