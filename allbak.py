@@ -5,15 +5,14 @@ import MySQLdb
 import math
 import time
 import os
-#import readline
-#import getpass
+import readline
+import getpass
 db = sys.argv[1]
 now_day=time.strftime("%Y-%m-%d", time.localtime())
 page_c=20000
 print now_day
-#u = raw_input('user:'); #p = getpass.getpass('password:')
-u = 'mysqlbak'
-p = '123456'
+u = raw_input('user:')
+p = getpass.getpass('password:')
 link = MySQLdb.connect("localhost", u, p, db, charset='utf8')
 cursor = link.cursor()
 cursor.execute('show tables')
