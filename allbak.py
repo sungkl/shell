@@ -1,10 +1,6 @@
 #!/bin/python
 # --coding:utf-8--
-import sys
-import MySQLdb
-import math
-import time
-import os
+import sys, MySQLdb, math, time, os
 import readline
 import getpass
 db = sys.argv[1]
