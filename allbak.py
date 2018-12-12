@@ -35,8 +35,7 @@ for i in tables:
 		filename=savedir+'/'+str(page)+'.txt'
 		print db, '-', name, '-', page, 'limit', a, page_c
 		if not os.path.isfile(filename):
-			sql="select * from `%s`.`%s` limit %s, %d into outfile '%s' fields terminated by ',' LINES TERMINATED BY '\n'" % (db, name, a, page_c, filename)
-			cursor.execute(sql)
+			cursor.execute( "select * from `%s`.`%s` limit %s, %d into outfile '%s' fields terminated by ',' LINES TERMINATED BY '\n'" % (db, name, a, page_c, filename) )
 			time.sleep(0.5)
 		page=page+1
 #for 结束
