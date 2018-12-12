@@ -43,7 +43,7 @@ link.close()
 if os.path.exists(maindir):
 	print '正在打包文件'
 	os.chdir('/data/mysql_bak/')
-	os.system('tar -zcf /data/mysql_bak/'+now_day+'/'+now_day+'-'+db+'.tar.gz '+now_day+'/'+db+'/')
+	os.system( 'tar -zcf /data/mysql_bak/%s/%s-%s.tar.gz %s/%s/' % (now_day, now_day, db, now_day, db) )
 	time.sleep(0.5)
 	print '完成'
 	os.system('rm -rf '+maindir)
