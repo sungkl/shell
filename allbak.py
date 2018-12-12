@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/bin/python
 # --coding:utf-8--
 import sys
 import MySQLdb
@@ -39,11 +39,13 @@ for i in tables:
 		filename=savedir+'/'+str(page)+'.txt'
 		print db, '-', name, '-', page, 'limit', a, page_c
 		if not os.path.isfile(filename):
-			cursor.execute("select * from `"+db+"`.`"+name+"` limit "+str(a)+","+str(page_c)+" into outfile '"+filename+"' fields terminated by ',' LINES TERMINATED BY '\n'")
+			sql="select * from `%s`.`%s` limit %s, %d into outfile '%s' fields terminated by ',' LINES TERMINATED BY '\n'" % (db, name, a, page_c, filename)
+			cursor.execute(sql)
 			time.sleep(0.5)
 		page=page+1
 #for 结束
 link.close()
+exit();
 if os.path.exists(maindir):
 	print '正在打包文件'
 	os.chdir('/data/mysql_bak/')
