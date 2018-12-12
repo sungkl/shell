@@ -24,7 +24,7 @@ for i in tables:
 	total = cursor.fetchone()
 	paget = math.ceil(float(total[0])/page_c)
 	savedir = maindir+name
-	if not os.path.exists(savedir):
+	if not os.path.isdir(savedir):
 		os.makedirs(savedir)
 		os.chown(savedir, mysqluid, mysqlgid) #修改所属用户和组
 	print '导出表结构', db, '-', name
