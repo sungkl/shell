@@ -40,7 +40,6 @@ for i in tables:
 		page=page+1
 #for 结束
 link.close()
-exit();
 if os.path.exists(maindir):
 	print '正在打包文件'
 	os.chdir('/data/mysql_bak/')
